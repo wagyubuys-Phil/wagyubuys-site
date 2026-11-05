@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WagyuBuys | Only the wagyu-grade picks</title>
+<meta name="description" content="WagyuBuys is coming soon: the best buys in premium meat, grilling, kitchen, home, and tech.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#161311; --panel:#1F1A17; --panel2:#241D1A; --line:#2E2824; --line2:#3A332E; --ink:#F3EEE8; --body:#C2B8AE; --muted:#B4AAA1; --accent:#E8A08F; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter, system-ui, sans-serif; }
+  a { color:var(--ink); } a:hover { color:var(--accent); }
+  .wrap { max-width:1200px; margin:0 auto; padding-left:24px; padding-right:24px; }
+  .serif { font-family:Fraunces, Georgia, serif; }
+  .banner { background:var(--accent); color:#161311; text-align:center; padding:12px 16px; font-size:15px; font-weight:500; }
+  .banner strong { letter-spacing:3px; text-transform:uppercase; font-weight:700; }
+  header { border-bottom:1px solid var(--line); }
+  .nav { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding-top:18px; padding-bottom:18px; }
+  .logo { font-family:Fraunces, Georgia, serif; font-size:28px; font-weight:600; text-decoration:none; }
+  .logo span { color:var(--accent); }
+  nav ul { display:flex; flex-wrap:wrap; gap:8px 24px; list-style:none; margin:0; padding:0; font-size:15px; font-weight:500; }
+  nav a { text-decoration:none; }
+  .hero { padding-top:80px; padding-bottom:48px; }
+  .kicker { margin:0 0 8px; font-size:13px; font-weight:600; letter-spacing:3px; text-transform:uppercase; color:var(--accent); }
+  h1 { font-family:Fraunces, Georgia, serif; font-weight:600; font-size:clamp(44px, 7vw, 84px); line-height:1.02; margin:16px 0 24px; max-width:900px; }
+  .lead { margin:0 0 28px; font-size:19px; line-height:1.6; color:var(--body); max-width:620px; }
+  .btns { display:flex; flex-wrap:wrap; gap:12px; }
+  .btn { height:52px; padding:0 28px; border-radius:26px; font-weight:600; font-size:16px; display:inline-flex; align-items:center; text-decoration:none; }
+  .btn.primary { background:var(--accent); color:#161311; }
+  .btn.ghost { border:1px solid #5A514A; }
+  .note { display:flex; gap:12px; align-items:flex-start; background:var(--panel2); border:1px solid var(--line2); border-radius:14px; padding:14px 18px; font-size:15px; line-height:1.55; color:#DCD3CA; margin:0; }
+  .note svg { flex:none; margin-top:2px; stroke:var(--accent); fill:none; stroke-width:2; stroke-linecap:round; }
+  .tiles { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:16px; padding-top:40px; }
+  .tile { text-decoration:none; background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:14px; min-height:120px; font-size:18px; font-weight:600; }
+  .tile svg { stroke:var(--accent); fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .cat { padding-top:56px; padding-bottom:24px; }
+  .cat h2, .section h2 { font-family:Fraunces, Georgia, serif; font-weight:600; font-size:36px; margin:0 0 24px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:20px; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:20px; overflow:hidden; display:flex; flex-direction:column; }
+  .ph { height:190px; background:#2A221E; }
+  .card-body { padding:20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .badge { margin:0; font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--accent); }
+  .card h3 { margin:0; font-family:Fraunces, Georgia, serif; font-weight:500; font-size:23px; }
+  .why { margin:0; font-size:15px; line-height:1.5; color:var(--body); }
+  .soon-tag { margin:auto 0 0; padding-top:12px; font-size:14px; font-weight:600; color:var(--muted); }
+  .band { background:#1D1916; border-top:1px solid var(--line); margin-top:56px; }
+  .section { padding-top:72px; padding-bottom:72px; }
+  .guides { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; }
+  .guide { background:var(--panel2); border:1px solid var(--line2); border-radius:18px; padding:24px; display:flex; flex-direction:column; gap:10px; }
+  .guide .t { font-family:Fraunces, Georgia, serif; font-size:24px; font-weight:500; }
+  .guide .d { font-size:15px; color:var(--body); }
+  .cols { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:32px; }
+  .cols h3 { margin:0 0 10px; font-size:20px; font-weight:600; }
+  .cols p { margin:0; font-size:16px; line-height:1.6; color:var(--body); }
+  footer { border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+  footer h2 { margin:0 0 8px; font-size:16px; font-weight:600; color:var(--ink); }
+  footer p { margin:0; line-height:1.6; max-width:760px; }
+  .foot { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:32px; padding-bottom:32px; }
+  .foot a { color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="banner" role="status"><strong>Coming soon</strong> &middot; WagyuBuys launches shortly. Here's a preview of what's on the way.</div>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#">Wagyu<span>Buys</span></a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#meat">Meat</a></li><li><a href="#grilling">Grilling</a></li><li><a href="#kitchen">Kitchen</a></li>
+      <li><a href="#home">Home</a></li><li><a href="#tech">Tech</a></li><li><a href="#guides">Guides</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <p class="kicker">The top grade of everything</p>
+    <h1>Only the wagyu-grade picks.</h1>
+    <p class="lead">The best buys in meat, grilling, kitchen, home, and tech, picked so you can skip the scrolling.</p>
+    <div class="btns">
+      <a class="btn primary" href="#meat">See the picks</a>
+      <a class="btn ghost" href="#guides">Read the guides</a>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <aside class="note" aria-label="Affiliate disclosure">
+      <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
+      <span><strong style="color:var(--ink)">Heads up:</strong> We earn a commission when you buy through links on this site, at no extra cost to you. <a href="#disclosure">Read our full disclosure</a>.</span>
+    </aside>
+  </div>
+
+  <section class="wrap" aria-label="Categories">
+    <div class="tiles">
+      <a class="tile" href="#meat"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4c4 0 7 3 6 7-1 5-7 9-12 9-3 0-5-2-4-5 1-4 5-11 10-11z"/><circle cx="14" cy="10" r="2"/></svg><span>Premium meat</span></a>
+      <a class="tile" href="#grilling"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16a8 8 0 0 1-16 0z"/><path d="M8 18l-2 4M16 18l2 4M9 6c0-1 1-1 1-2M13 6c0-1 1-1 1-2"/></svg><span>Grilling &amp; BBQ</span></a>
+      <a class="tile" href="#kitchen"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11h14v5a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M17 13h4M7 7c0-1 1-1 1-3M11 7c0-1 1-1 1-3"/></svg><span>Kitchen &amp; cookware</span></a>
+      <a class="tile" href="#home"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9H3z"/><path d="M10 20v-6h4v6"/></svg><span>Home &amp; lifestyle</span></a>
+      <a class="tile" href="#tech"><svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Tech &amp; gadgets</span></a>
+    </div>
+  </section>
+
+  <section id="meat" class="wrap cat">
+    <p class="kicker">Premium meat</p>
+    <h2>The butcher counter</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Top pick</p>
+          <h3>American Wagyu ribeye</h3>
+          <p class="why">Rich marbling without the A5 price tag.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Best pork</p>
+          <h3>Kurobuta pork chops</h3>
+          <p class="why">Heritage-breed pork that stays juicy.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Best value</p>
+          <h3>Wagyu burger patties</h3>
+          <p class="why">An easy weeknight upgrade.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="grilling" class="wrap cat">
+    <p class="kicker">Grilling &amp; BBQ</p>
+    <h2>Fire it up</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Must-have</p>
+          <h3>Instant-read thermometer</h3>
+          <p class="why">The cheapest way to cook steak right.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Splurge</p>
+          <h3>Kamado grill</h3>
+          <p class="why">Grills, smokes, and bakes in one.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Best value</p>
+          <h3>Cast-iron skillet</h3>
+          <p class="why">The best sear indoors or out.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="kitchen" class="wrap cat">
+    <p class="kicker">Kitchen &amp; cookware</p>
+    <h2>Kitchen upgrades</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Top pick</p>
+          <h3>Chef&#x27;s knife</h3>
+          <p class="why">The one knife you will reach for daily.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Lasts forever</p>
+          <h3>Enameled Dutch oven</h3>
+          <p class="why">Braises, soups, and bread.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Best value</p>
+          <h3>End-grain cutting board</h3>
+          <p class="why">Easy on knives and looks great.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="home" class="wrap cat">
+    <p class="kicker">Home &amp; lifestyle</p>
+    <h2>Around the house</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Top pick</p>
+          <h3>Air purifier</h3>
+          <p class="why">Our pick is on the way.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Splurge</p>
+          <h3>Linen sheet set</h3>
+          <p class="why">Our pick is on the way.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Time saver</p>
+          <h3>Robot vacuum</h3>
+          <p class="why">Our pick is on the way.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="tech" class="wrap cat">
+    <p class="kicker">Tech &amp; gadgets</p>
+    <h2>Gear worth it</h2>
+    <div class="grid">
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Top pick</p>
+          <h3>Noise-canceling headphones</h3>
+          <p class="why">Our pick is on the way.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Best value</p>
+          <h3>Portable charger</h3>
+          <p class="why">Our pick is on the way.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ph" aria-hidden="true"></div>
+        <div class="card-body">
+          <p class="badge">Upgrade</p>
+          <h3>Smart home hub</h3>
+          <p class="why">Our pick is on the way.</p>
+          <p class="soon-tag">Link coming soon</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="guides" class="band">
+    <div class="wrap section">
+      <h2>Buying guides</h2>
+      <div class="guides">
+        <div class="guide"><span class="kicker">Meat &middot; Coming soon</span><span class="t">Best wagyu to order online</span><span class="d">American vs. Japanese, and where each is worth it.</span></div>
+        <div class="guide"><span class="kicker">Grilling &middot; Coming soon</span><span class="t">Best meat thermometers</span><span class="d">Instant-read and wireless picks for a perfect cook.</span></div>
+        <div class="guide"><span class="kicker">Kitchen &middot; Coming soon</span><span class="t">Best chef's knives</span><span class="d">The one knife that does almost everything.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <h2>How we pick</h2>
+    <div class="cols">
+      <div><h3>Top grade only</h3><p>A pick has to be the best in its category, not just the most popular.</p></div>
+      <div><h3>Real research</h3><p>We compare specs, owner reviews, and price before anything makes the list.</p></div>
+      <div><h3>Honest picks</h3><p>Sellers can't pay to be listed. Commissions never decide what makes the cut.</p></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div id="disclosure" class="wrap" style="padding-top:32px">
+    <h2>Affiliate disclosure</h2>
+    <p>WagyuBuys is reader-supported. Some links on this site are affiliate links. If you click one and make a purchase, the seller pays us a commission, at no extra cost to you. Sellers do not pay us to be listed, and our recommendations are our own.</p>
+  </div>
+  <div class="wrap foot">
+    <span>&copy; 2026 WagyuBuys</span>
+    <a href="#disclosure">Affiliate disclosure</a>
+  </div>
+</footer>
+</body>
+</html>
