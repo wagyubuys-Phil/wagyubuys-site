@@ -61,6 +61,21 @@
   footer p { margin:0; line-height:1.6; max-width:760px; }
   .foot { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; padding-top:32px; padding-bottom:32px; }
   .foot a { color:var(--muted); }
+  .feat { background:#1D1916; border:1px solid var(--line2); border-top:4px solid var(--accent); border-radius:24px; padding:32px; display:flex; flex-direction:column; gap:24px; margin-top:40px; }
+  .feat-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-end; gap:12px; }
+  .feat-head h2 { font-family:Fraunces, Georgia, serif; font-weight:600; font-size:36px; margin:0; }
+  .feat-note { margin:0; font-size:15px; color:var(--muted); }
+  .feat-row { display:flex; flex-wrap:wrap; gap:20px; }
+  .feat-main { flex:2 1 520px; min-width:0; background:var(--panel2); border:1px solid var(--line2); border-radius:20px; overflow:hidden; display:flex; flex-wrap:wrap; }
+  .feat-ph { flex:1 1 240px; min-height:260px; background:#2A221E; }
+  .feat-body { flex:1 1 260px; padding:28px; display:flex; flex-direction:column; gap:10px; }
+  .feat-body h3 { margin:0; font-family:Fraunces, Georgia, serif; font-weight:500; font-size:30px; line-height:1.15; }
+  .feat-body .why { font-size:16px; line-height:1.6; }
+  .feat-side { flex:1 1 300px; min-width:0; display:flex; flex-direction:column; gap:20px; }
+  .feat-mini { flex:1; background:var(--panel2); border:1px solid var(--line2); border-radius:20px; padding:20px; display:flex; gap:16px; align-items:center; }
+  .mini-ph { flex:none; width:96px; height:96px; border-radius:14px; background:#2A221E; }
+  .feat-mini h3 { margin:4px 0 0; font-family:Fraunces, Georgia, serif; font-weight:500; font-size:21px; }
+  @media (max-width: 480px) { .feat { padding:20px; } .mini-ph { width:72px; height:72px; } }
 </style>
 </head>
 <body>
@@ -93,6 +108,30 @@
       <span><strong style="color:var(--ink)">Heads up:</strong> We earn a commission when you buy through links on this site, at no extra cost to you. <a href="#disclosure">Read our full disclosure</a>.</span>
     </aside>
   </div>
+
+  <section id="featured" class="wrap" aria-labelledby="featured-h">
+    <div class="feat">
+      <div class="feat-head">
+        <div><p class="kicker">Featured</p><h2 id="featured-h">This month's top grade</h2></div>
+        <p class="feat-note">Hand-picked. Updated monthly.</p>
+      </div>
+      <div class="feat-row">
+        <article class="feat-main">
+          <div class="feat-ph" aria-hidden="true"></div>
+          <div class="feat-body">
+            <p class="badge">Pick of the month</p>
+            <h3>Instant-read meat thermometer</h3>
+            <p class="why">The cheapest way to protect an expensive steak. Pull it at the right temperature every time.</p>
+            <p class="soon-tag">Link coming soon</p>
+          </div>
+        </article>
+        <div class="feat-side">
+          <article class="feat-mini"><div class="mini-ph" aria-hidden="true"></div><div><p class="badge">Premium meat</p><h3>American Wagyu ribeye</h3><p class="soon-tag">Link coming soon</p></div></article>
+          <article class="feat-mini"><div class="mini-ph" aria-hidden="true"></div><div><p class="badge">Grilling &amp; BBQ</p><h3>Cast-iron skillet</h3><p class="soon-tag">Link coming soon</p></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="wrap" aria-label="Categories">
     <div class="tiles">
