@@ -76,6 +76,9 @@
   .mini-ph { flex:none; width:96px; height:96px; border-radius:14px; background:#2A221E; }
   .feat-mini h3 { margin:4px 0 0; font-family:Fraunces, Georgia, serif; font-weight:500; font-size:21px; }
   @media (max-width: 480px) { .feat { padding:20px; } .mini-ph { width:72px; height:72px; } }
+  .btn-check { align-self:flex-start; margin-top:auto; height:48px; padding:0 22px; border-radius:24px; background:var(--accent); color:#161311; font-weight:600; font-size:15px; display:inline-flex; align-items:center; gap:6px; text-decoration:none; }
+  .btn-check:hover { color:#161311; background:#F0B5A6; }
+  .btn-check svg { fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
 </style>
 </head>
 <body>
@@ -105,7 +108,7 @@
   <div class="wrap">
     <aside class="note" aria-label="Affiliate disclosure">
       <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></svg>
-      <span><strong style="color:var(--ink)">Heads up:</strong> We earn a commission when you buy through links on this site, at no extra cost to you. <a href="#disclosure">Read our full disclosure</a>.</span>
+      <span><strong style="color:var(--ink)">Heads up:</strong> We earn a commission when you buy through links on this site, at no extra cost to you. As an Amazon Associate I earn from qualifying purchases. <a href="#disclosure">Read our full disclosure</a>.</span>
     </aside>
   </div>
 
@@ -122,7 +125,7 @@
             <p class="badge">Pick of the month</p>
             <h3>Instant-read meat thermometer</h3>
             <p class="why">The cheapest way to protect an expensive steak. Pull it at the right temperature every time.</p>
-            <p class="soon-tag">Link coming soon</p>
+            <a class="btn-check" href="https://link.amazon/A0303l2uY" target="_blank" rel="sponsored noopener">Check price on Amazon <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
           </div>
         </article>
         <div class="feat-side">
@@ -367,7 +370,7 @@
 <footer>
   <div id="disclosure" class="wrap" style="padding-top:32px">
     <h2>Affiliate disclosure</h2>
-    <p>WagyuBuys is reader-supported. Some links on this site are affiliate links. If you click one and make a purchase, the seller pays us a commission, at no extra cost to you. Sellers do not pay us to be listed, and our recommendations are our own.</p>
+    <p>WagyuBuys is reader-supported. Some links on this site are affiliate links. If you click one and make a purchase, the seller pays us a commission, at no extra cost to you. Sellers do not pay us to be listed, and our recommendations are our own. As an Amazon Associate I earn from qualifying purchases.</p>
   </div>
   <div class="wrap foot">
     <span>&copy; 2026 WagyuBuys</span>
